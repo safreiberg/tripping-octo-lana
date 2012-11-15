@@ -17,4 +17,6 @@
 
 class Workout < ActiveRecord::Base
   attr_accessible :end, :heart_rate, :intensity, :length, :location, :start, :type, :user_id
+  
+  belongs_to :user
 end

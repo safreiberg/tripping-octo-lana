@@ -37,4 +37,8 @@ class User
   validates_uniqueness_of :email, :case_sensitive => false
   
   has_many :feelings
+  has_many :workouts
+  has_many :notes
+  has_many :healths
+  has_many :foods
 end

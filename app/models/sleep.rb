@@ -13,4 +13,6 @@
 
 class Sleep < ActiveRecord::Base
   attr_accessible :end, :quality, :start, :user_id, :location
+  
+  belongs_to :user
 end

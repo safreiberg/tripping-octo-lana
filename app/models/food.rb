@@ -14,4 +14,6 @@
 
 class Food < ActiveRecord::Base
   attr_accessible :calories, :carbs, :fat, :protein, :time
+  
+  belongs_to :user
 end

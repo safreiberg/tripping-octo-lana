@@ -10,4 +10,6 @@
 
 class Health < ActiveRecord::Base
   attr_accessible :weight
+  
+  belongs_to :user
 end
