@@ -7,9 +7,9 @@ Role.create([
 
 puts 'SETTING UP DEFAULT USER LOGIN'
 
-user1 = User.create! :name => 'First User', :email => 'user1@example.com', :password => 'password', :password_confirmation => 'password'
+user1 = User.create! :name => 'Admin', :email => 'admin@b.com', :password => 'password', :password_confirmation => 'password'
 puts 'New user created: ' << user1.name
-user2 = User.create! :name => 'Second User', :email => 'user2@example.com', :password => 'password', :password_confirmation => 'password'
+user2 = User.create! :name => 'User2', :email => 'user2@b.com', :password => 'password', :password_confirmation => 'password'
 puts 'New user created: ' << user2.name
 user1.add_role :admin
 user2.add_role :user
