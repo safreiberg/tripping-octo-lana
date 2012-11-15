@@ -98,3 +98,11 @@ Health.create(:weight => 162, :user_id => user2.id, :time => yesterday - 6.hour)
 Health.create(:weight => 159, :user_id => user2.id, :time => two_ago - 6.hour)
 Health.create(:weight => 165, :user_id => user2.id, :time => three_ago - 6.hour)
 Health.create(:weight => 160, :user_id => user2.id, :time => four_ago - 6.hour)
+
+## Setting up Weathers
+
+Weather.create(:description => "rain", :temperature => 65, :time => today, :user_id => user2.id)
+Weather.create(:description => "sun", :temperature => 72, :time => yesterday, :user_id => user2.id)
+Weather.create(:description => "cloud", :temperature => 50, :time => two_ago, :user_id => user2.id)
+Weather.create(:description => "sun", :temperature => 48, :time => three_ago, :user_id => user2.id)
+Weather.create(:description => "rain", :temperature => 45, :time => four_ago, :user_id => user2.id)

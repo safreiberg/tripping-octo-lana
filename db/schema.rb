@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121115195240) do
+ActiveRecord::Schema.define(:version => 20121115195841) do
+
+  create_table "events", :force => true do |t|
+    t.integer  "user_id"
+    t.text     "description"
+    t.datetime "time"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "feelings", :force => true do |t|
     t.integer  "value"
@@ -98,6 +106,15 @@ ActiveRecord::Schema.define(:version => 20121115195240) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], :name => "index_users_roles_on_user_id_and_role_id"
+
+  create_table "weathers", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "temperature"
+    t.datetime "time"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "workouts", :force => true do |t|
     t.integer  "length"

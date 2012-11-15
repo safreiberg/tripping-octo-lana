@@ -41,4 +41,6 @@ class User
   has_many :notes
   has_many :healths
   has_many :foods
+  has_many :events
+  has_many :weathers
 end
