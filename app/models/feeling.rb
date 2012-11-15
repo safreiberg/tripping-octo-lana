@@ -15,4 +15,8 @@ class Feeling < ActiveRecord::Base
   attr_accessible :target_id, :target_type, :value, :user_id
   
   belongs_to :user
+  
+  validates_presence_of :target_type
+  validates_presence_of :user_id
+  validates_presence_of :value
 end

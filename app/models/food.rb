@@ -10,10 +10,13 @@
 #  calories   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  user_id    :integer
 #
 
 class Food < ActiveRecord::Base
-  attr_accessible :calories, :carbs, :fat, :protein, :time
+  attr_accessible :calories, :carbs, :fat, :protein, :time, :user_id
   
   belongs_to :user
+  
+  
 end
