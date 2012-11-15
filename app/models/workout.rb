@@ -13,10 +13,16 @@
 #  location   :string(255)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  what       :string(255)
+#  time       :datetime
 #
 
 class Workout < ActiveRecord::Base
-  attr_accessible :end, :heart_rate, :intensity, :length, :location, :start, :type, :user_id
+  attr_accessible :end, :heart_rate, :intensity, :length, :location, :start, :type, :user_id, :what
   
   belongs_to :user
+  
+  validates_presence_of :user_id
+  validates_presence_of :length
+  
 end
