@@ -9,7 +9,7 @@ class HomeController < ApplicationController
     @foods = current_user.foods.where('time BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).all
     @workouts = current_user.workouts.where('start BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).all
     @feelings = current_user.weathers.where('time BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).all
-    @sleeps = current_user.sleeps.where('end BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).all
+    @sleeps = current_user.sleeps.where('`end` BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).all
     @sleeps = @sleeps + current_user.sleeps.where('start BETWEEN ? AND ?',  DateTime.now.beginning_of_day, DateTime.now.end_of_day).all
     @sleeps = @sleeps.uniq
     @healths = current_user.healths.where('time BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).all
