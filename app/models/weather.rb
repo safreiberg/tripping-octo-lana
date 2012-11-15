@@ -15,6 +15,7 @@ class Weather < ActiveRecord::Base
   attr_accessible :description, :temperature, :time, :user_id
   
   validates_presence_of :user_id
+  validates_presence_of :time
   
   belongs_to :user
 end

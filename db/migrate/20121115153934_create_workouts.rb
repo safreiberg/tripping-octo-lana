@@ -5,7 +5,7 @@ class CreateWorkouts < ActiveRecord::Migration
       t.integer :intensity
       t.datetime :start
       t.datetime :end
-      t.string :type
+      t.string :variety
       t.integer :heart_rate
       t.integer :user_id
       t.string :location

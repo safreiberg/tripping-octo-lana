@@ -43,4 +43,5 @@ class User
   has_many :foods
   has_many :events
   has_many :weathers
+  has_many :sleeps
 end

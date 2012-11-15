@@ -7,7 +7,7 @@
 #  intensity  :integer
 #  start      :datetime
 #  end        :datetime
-#  type       :string(255)
+#  variety    :string(255)
 #  heart_rate :integer
 #  user_id    :integer
 #  location   :string(255)
@@ -18,11 +18,12 @@
 #
 
 class Workout < ActiveRecord::Base
-  attr_accessible :end, :heart_rate, :intensity, :length, :location, :start, :type, :user_id, :what
+  attr_accessible :end, :heart_rate, :intensity, :length, :location, :start, :variety, :user_id, :what
   
   belongs_to :user
   
   validates_presence_of :user_id
   validates_presence_of :length
+  validates_presence_of :start
   
 end

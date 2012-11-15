@@ -1,4 +1,100 @@
 <h2>Dashboard for <%= current_user.name %></h2>
-
+<h3><%= @day.strftime('%A, %b %d') %></h3>
 <div class="span8">
+
+<table class="table table-condensed">
+  <caption><b>Food</b></caption>
+	  <thead>
+      <tr>
+          <th>Name</th>
+          <th>Calories</th>
+          <th>Time</th>
+      </tr>
+  </thead>   
+  <tbody>
+    <% @foods.each do |food| %>
+    <tr>
+      <td><%= food.name %></td>
+      <td><%= food.calories %></td>
+      <td><%= food.time.strftime('%H:%M, %a') %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<br />
+
+
+
+
+<table class="table table-condensed">
+  <caption><b>Workouts</b></caption>
+	  <thead>
+      <tr>
+          <th>What</th>
+          <th>Variety</th>
+          <th>Length</th>
+          <th>Time</th>
+      </tr>
+  </thead>   
+  <tbody>
+    <% @workouts.each do |work| %>
+    <tr>
+      <td><%= work.what %></td>
+      <td><%= work.variety %></td>
+      <td><%= work.length %></td>
+      <td><%= work.start.strftime('%H:%M, %a') %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<br />
+
+
+
+
+<table class="table table-condensed">
+  <caption><b>Sleeps</b></caption>
+	  <thead>
+      <tr>
+          <th>Start</th>
+          <th>End</th>
+          <th>Length</th>
+          <th>Location</th>
+          <th>Quality</th>
+      </tr>
+  </thead>   
+  <tbody>
+    <% @sleeps.each do |sleep| %>
+    <tr>
+      <td><%= sleep.start.strftime('%H:%M, %a') %></td>
+      <td><%= sleep.end.strftime('%H:%M, %a') %></td>
+      <td><%= (sleep.end - sleep.start)/3600 %></td>
+      <td><%= sleep.location %></td>
+      <td><%= sleep.quality %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<br />
+
+
+
+
+<table class="table table-condensed">
+  <caption><b>Healths</b></caption>
+	  <thead>
+      <tr>
+          <th>Time</th>
+          <th>Weight</th>
+      </tr>
+  </thead>   
+  <tbody>
+    <% @healths.each do |health| %>
+    <tr>
+      <td><%= health.time.strftime('%H:%M, %a') %></td>
+      <td><%= health.weight %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 </div>

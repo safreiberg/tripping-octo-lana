@@ -7,7 +7,7 @@
 #  intensity  :integer
 #  start      :datetime
 #  end        :datetime
-#  type       :string(255)
+#  variety    :string(255)
 #  heart_rate :integer
 #  user_id    :integer
 #  location   :string(255)
