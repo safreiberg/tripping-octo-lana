@@ -1,19 +1,16 @@
 # == Schema Information
 #
-# Table name: feelings
+# Table name: notes
 #
 #  id          :integer          not null, primary key
-#  value       :integer
-#  target_type :string(255)
-#  target_id   :integer
-#  user_id     :integer
+#  description :text
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
 
 require 'test_helper'
 
-class FeelingTest < ActiveSupport::TestCase
+class NoteTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

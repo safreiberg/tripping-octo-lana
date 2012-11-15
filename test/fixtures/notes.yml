@@ -1,12 +1,9 @@
 # == Schema Information
 #
-# Table name: feelings
+# Table name: notes
 #
 #  id          :integer          not null, primary key
-#  value       :integer
-#  target_type :string(255)
-#  target_id   :integer
-#  user_id     :integer
+#  description :text
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
@@ -14,11 +11,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  value: 1
-  target_type: MyString
-  target_id: 1
+  description: MyText
 
 two:
-  value: 1
-  target_type: MyString
-  target_id: 1
+  description: MyText

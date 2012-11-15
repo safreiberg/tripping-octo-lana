@@ -48,3 +48,5 @@ gem "devise", ">= 2.1.2"
 gem "cancan", ">= 1.6.8"
 gem 'simple_form'
 gem "rolify", ">= 3.2.0"
+gem 'annotate', ">=2.5.0"
+

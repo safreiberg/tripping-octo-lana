@@ -11,13 +11,35 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121115032203) do
+ActiveRecord::Schema.define(:version => 20121115154211) do
 
   create_table "feelings", :force => true do |t|
     t.integer  "value"
     t.string   "target_type"
     t.integer  "target_id"
     t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "foods", :force => true do |t|
+    t.integer  "carbs"
+    t.integer  "fat"
+    t.integer  "protein"
+    t.datetime "time"
+    t.integer  "calories"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "healths", :force => true do |t|
+    t.float    "weight"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "notes", :force => true do |t|
+    t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -32,6 +54,15 @@ ActiveRecord::Schema.define(:version => 20121115032203) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], :name => "index_roles_on_name"
+
+  create_table "sleeps", :force => true do |t|
+    t.datetime "start"
+    t.datetime "end"
+    t.integer  "quality"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -58,5 +89,18 @@ ActiveRecord::Schema.define(:version => 20121115032203) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], :name => "index_users_roles_on_user_id_and_role_id"
+
+  create_table "workouts", :force => true do |t|
+    t.integer  "length"
+    t.integer  "intensity"
+    t.datetime "start"
+    t.datetime "end"
+    t.string   "type"
+    t.integer  "heart_rate"
+    t.integer  "user_id"
+    t.string   "location"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end
