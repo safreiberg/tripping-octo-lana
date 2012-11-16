@@ -23,6 +23,11 @@ class Food < ActiveRecord::Base
   validates_presence_of :calories
   validates_presence_of :name
   
+  validates_numericality_of :calories, :greater_than => 0, :allow_blank => false
+  validates_numericality_of :carbs, :greater_than => 0, :allow_blank => true
+  validates_numericality_of :fat, :greater_than => 0, :allow_blank => true
+  validates_numericality_of :protein, :greater_than => 0, :allow_blank => true
+  
   belongs_to :user
   
   

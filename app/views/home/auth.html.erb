@@ -3,24 +3,27 @@
 <div class="span8">
 
 <table class="table table-condensed">
-  <caption><b>Food</b></caption>
+  <caption><b>Foods</b></caption>
 	  <thead>
       <tr>
           <th>Name</th>
           <th>Calories</th>
           <th>Time</th>
+          <th></th>
       </tr>
   </thead>   
   <tbody>
     <% @foods.each do |food| %>
     <tr>
-      <td><%= food.name %></td>
+      <td><%= link_to food.name, edit_food_path(food), :class => 'action' %></td>
       <td><%= food.calories %></td>
-      <td><%= food.time.strftime('%H:%M, %a') %></td>
+      <td><%= food.time.strftime('%I:%M %p, %a') %></td>
+      <td><%= link_to "delete", food, :method => :delete, :class => 'action' %>
     </tr>
     <% end %>
   </tbody>
 </table>
+<%= button_to "new food", new_food_path, method: :get, :class => 'btn'%> 
 <br />
 
 
@@ -42,7 +45,7 @@
       <td><%= work.what %></td>
       <td><%= work.variety %></td>
       <td><%= work.length %></td>
-      <td><%= work.start.strftime('%H:%M, %a') %></td>
+      <td><%= work.start.strftime('%I:%M %p, %a') %></td>
     </tr>
     <% end %>
   </tbody>
@@ -66,9 +69,9 @@
   <tbody>
     <% @sleeps.each do |sleep| %>
     <tr>
-      <td><%= sleep.start.strftime('%H:%M, %a') %></td>
-      <td><%= sleep.end.strftime('%H:%M, %a') %></td>
-      <td><%= (sleep.end - sleep.start)/3600 %></td>
+      <td><%= sleep.starttime.strftime('%I:%M %p, %a') %></td>
+      <td><%= sleep.endtime.strftime('%I:%M %p, %a') %></td>
+      <td><%= (sleep.endtime - sleep.starttime)/3600 %></td>
       <td><%= sleep.location %></td>
       <td><%= sleep.quality %></td>
     </tr>
@@ -91,7 +94,7 @@
   <tbody>
     <% @healths.each do |health| %>
     <tr>
-      <td><%= health.time.strftime('%H:%M, %a') %></td>
+      <td><%= health.time.strftime('%I:%M %p, %a') %></td>
       <td><%= health.weight %></td>
     </tr>
     <% end %>
