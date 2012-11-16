@@ -85,11 +85,11 @@ Sleep.create(:endtime => four_ago-8.hour, :quality => "95", :starttime => four_a
 
 ## Setting up Workouts
 
-Workout.create(:end => today, :length => 120, :location => "boathouse", :start => today-2.hour, :variety => "steady state", :user_id => user2.id, :what => "2x10k")
-Workout.create(:end => yesterday, :length => 120, :location => "boathouse", :start => yesterday-2.hour, :variety => "steady state", :user_id => user2.id, :what => "2x10k")
-Workout.create(:end => two_ago, :length => 120, :location => "boathouse", :start => two_ago-2.hour, :variety => "steady state", :user_id => user2.id, :what => "2x10k")
-Workout.create(:end => three_ago, :length => 120, :location => "boathouse", :start => three_ago-2.hour, :variety => "steady state", :user_id => user2.id, :what => "2x10k")
-Workout.create(:end => four_ago, :length => 120, :location => "boathouse", :start => four_ago-2.hour, :variety => "steady state", :user_id => user2.id, :what => "2x10k")
+Workout.create(:endtime => today, :length => 120, :location => "boathouse", :starttime => today-2.hour, :variety => "steady state", :user_id => user2.id, :what => "2x10k")
+Workout.create(:endtime => yesterday, :length => 120, :location => "boathouse", :starttime => yesterday-2.hour, :variety => "steady state", :user_id => user2.id, :what => "2x10k")
+Workout.create(:endtime => two_ago, :length => 120, :location => "boathouse", :starttime => two_ago-2.hour, :variety => "steady state", :user_id => user2.id, :what => "2x10k")
+Workout.create(:endtime => three_ago, :length => 120, :location => "boathouse", :starttime => three_ago-2.hour, :variety => "steady state", :user_id => user2.id, :what => "2x10k")
+Workout.create(:endtime => four_ago, :length => 120, :location => "boathouse", :starttime => four_ago-2.hour, :variety => "steady state", :user_id => user2.id, :what => "2x10k")
 
 ## Setting up Healths
 

@@ -18,12 +18,13 @@
 #
 
 class Workout < ActiveRecord::Base
-  attr_accessible :end, :heart_rate, :intensity, :length, :location, :start, :variety, :user_id, :what
+  attr_accessible :endtime, :heart_rate, :intensity, :length, :location, :starttime, :variety, :user_id, :what
   
   belongs_to :user
   
   validates_presence_of :user_id
   validates_presence_of :length
-  validates_presence_of :start
+  validates_presence_of :starttime
+  validates_presence_of :what
   
 end

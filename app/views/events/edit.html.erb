@@ -1,2 +1,7 @@
-<h1>Events#edit</h1>
-<p>Find me in app/views/events/edit.html.erb</p>
+<h2>edit event item</h2>
+<%= simple_form_for(@event, :html => {:class => 'form-vertical' }) do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :description, :autofocus => true, :required => true %> 
+  <%= f.input :time, :required => true %>
+  <%= f.button :submit, 'submit', :class => 'btn-primary' %>
+<% end %>

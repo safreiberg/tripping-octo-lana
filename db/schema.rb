@@ -120,8 +120,8 @@ ActiveRecord::Schema.define(:version => 20121115204342) do
   create_table "workouts", :force => true do |t|
     t.integer  "length"
     t.integer  "intensity"
-    t.datetime "start"
-    t.datetime "end"
+    t.datetime "starttime"
+    t.datetime "endtime"
     t.string   "variety"
     t.integer  "heart_rate"
     t.integer  "user_id"

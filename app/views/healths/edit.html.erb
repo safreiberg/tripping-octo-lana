@@ -1,2 +1,7 @@
-<h1>Healths#edit</h1>
-<p>Find me in app/views/healths/edit.html.erb</p>
+<h2>edit health item</h2>
+<%= simple_form_for(@health, :html => {:class => 'form-vertical' }) do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :weight, :autofocus => true, :required => true %> 
+  <%= f.input :time, :required => true %>
+  <%= f.button :submit, 'submit', :class => 'btn-primary' %>
+<% end %>

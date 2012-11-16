@@ -1,2 +1,9 @@
-<h1>Sleeps#edit</h1>
-<p>Find me in app/views/sleeps/edit.html.erb</p>
+<h2>edit sleep item</h2>
+<%= simple_form_for(@sleep, :html => {:class => 'form-vertical' }) do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :starttime, :autofocus => true, :required => true %> 
+  <%= f.input :endtime, :required => true %> 
+  <%= f.input :quality, :required => true %> 
+  <%= f.input :location, :required => true %> 
+  <%= f.button :submit, 'submit', :class => 'btn-primary' %>
+<% end %>

@@ -9,19 +9,22 @@
           <th>Value</th>
           <th>Time</th>
           <th>Location</th>
+          <th></th>
      </tr>
   </thead>   
   <tbody>
     <% @feelings.each do |feeling| %>
     <tr>
-      <td><%= feeling.target_type %></td>
+      <td><%= link_to feeling.target_type, edit_feeling_path(feeling), :class => 'action' %></td>
       <td><%= feeling.value %></td>
       <td><%= feeling.time.strftime('%I:%M %p, %a') %></td>
-      <td><%= feeling.location%>
+      <td><%= feeling.location%></td>
+      <td><%= link_to "delete", feeling, :method => :delete, :class => 'action'%>
     </tr>
     <% end %>
   </tbody>
 </table>
+<%= button_to "new feeling", new_feeling_path, method: :get, :class => 'btn'%> 
 <br />
 
 
@@ -60,19 +63,22 @@
           <th>Variety</th>
           <th>Length</th>
           <th>Time</th>
+          <th></th>
       </tr>
   </thead>   
   <tbody>
     <% @workouts.each do |work| %>
     <tr>
-      <td><%= work.what %></td>
+      <td><%= link_to work.what, edit_workout_path(work), :class => "action" %></td>
       <td><%= work.variety %></td>
       <td><%= work.length %></td>
-      <td><%= work.start.strftime('%I:%M %p, %a') %></td>
+      <td><%= work.starttime.strftime('%I:%M %p, %a') %></td>
+      <td><%= link_to "delete", work, :method => :delete, :class => 'action'%>
     </tr>
     <% end %>
   </tbody>
 </table>
+<%= button_to "new workout", new_workout_path, method: :get, :class => 'btn'%> 
 <br />
 
 
@@ -87,20 +93,23 @@
           <th>Length</th>
           <th>Location</th>
           <th>Quality</th>
+          <th></th>
       </tr>
   </thead>   
   <tbody>
     <% @sleeps.each do |sleep| %>
     <tr>
-      <td><%= sleep.starttime.strftime('%I:%M %p, %a') %></td>
+      <td><%= link_to sleep.starttime.strftime('%I:%M %p, %a'), edit_sleep_path(sleep), :class => 'action' %></td>
       <td><%= sleep.endtime.strftime('%I:%M %p, %a') %></td>
       <td><%= (sleep.endtime - sleep.starttime)/3600 %></td>
       <td><%= sleep.location %></td>
       <td><%= sleep.quality %></td>
+      <td><%= link_to "delete", sleep, :method => :delete, :class => 'action'%></td>
     </tr>
     <% end %>
   </tbody>
 </table>
+<%= button_to "new sleep", new_sleep_path, method: :get, :class => 'btn'%> 
 <br />
 
 
@@ -111,17 +120,20 @@
       <tr>
           <th>Time</th>
           <th>Description</th>
+          <th></th>
       </tr>
   </thead>   
   <tbody>
     <% @events.each do |event| %>
     <tr>
-      <td><%= event.time.strftime('%I:%M %p, %a') %></td>
+      <td><%= link_to event.time.strftime('%I:%M %p, %a'), edit_event_path(event), :class => 'action' %></td>
       <td><%= event.description %></td>
+      <td><%= link_to "delete", event, :method => :delete, :class => 'action' %></td>
     </tr>
     <% end %>
   </tbody>
 </table>
+<%= button_to "new event", new_event_path, method: :get, :class => 'btn'%> 
 <br />
 
 
@@ -133,15 +145,18 @@
       <tr>
           <th>Time</th>
           <th>Weight</th>
+          <th></th>
       </tr>
   </thead>   
   <tbody>
     <% @healths.each do |health| %>
     <tr>
-      <td><%= health.time.strftime('%I:%M %p, %a') %></td>
+      <td><%= link_to health.time.strftime('%I:%M %p, %a'), edit_health_path(health), :class => 'action' %></td>
       <td><%= health.weight %></td>
+      <td><%= link_to "delete", health, method: :delete, class: 'action' %>
     </tr>
     <% end %>
   </tbody>
 </table>
+<%= button_to "new health", new_health_path, method: :get, :class => 'btn'%> 
 </div>
