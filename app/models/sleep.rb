@@ -13,11 +13,11 @@
 #
 
 class Sleep < ActiveRecord::Base
-  attr_accessible :end, :quality, :start, :user_id, :location
+  attr_accessible :endtime, :quality, :starttime, :user_id, :location
   
   validates_presence_of :user_id
-  validates_presence_of :start
-  validates_presence_of :end
+  validates_presence_of :starttime
+  validates_presence_of :endtime
   
   belongs_to :user
 end

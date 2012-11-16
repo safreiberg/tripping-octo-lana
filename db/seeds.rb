@@ -77,11 +77,11 @@ Food.create(:calories => 700, :carbs => 64, :fat => 27, :protein => 49, :time =>
 
 ## Setting up Sleeps
 
-Sleep.create(:end => today-8.hour, :quality => "85", :start => today-16.hour, :user_id => user2.id, :location => "apartment")
-Sleep.create(:end => yesterday-8.hour, :quality => "65", :start => yesterday-16.hour, :user_id => user2.id, :location => "apartment")
-Sleep.create(:end => two_ago-8.hour, :quality => "70", :start => two_ago-16.hour, :user_id => user2.id, :location => "apartment")
-Sleep.create(:end => three_ago-12.hour, :quality => "40", :start => three_ago-16.hour, :user_id => user2.id, :location => "apartment")
-Sleep.create(:end => four_ago-8.hour, :quality => "95", :start => four_ago-16.hour, :user_id => user2.id, :location => "apartment")
+Sleep.create(:endtime => today-8.hour, :quality => "85", :starttime => today-16.hour, :user_id => user2.id, :location => "apartment")
+Sleep.create(:endtime => yesterday-8.hour, :quality => "65", :starttime => yesterday-16.hour, :user_id => user2.id, :location => "apartment")
+Sleep.create(:endtime => two_ago-8.hour, :quality => "70", :starttime => two_ago-16.hour, :user_id => user2.id, :location => "apartment")
+Sleep.create(:endtime => three_ago-12.hour, :quality => "40", :starttime => three_ago-16.hour, :user_id => user2.id, :location => "apartment")
+Sleep.create(:endtime => four_ago-8.hour, :quality => "95", :starttime => four_ago-16.hour, :user_id => user2.id, :location => "apartment")
 
 ## Setting up Workouts
 

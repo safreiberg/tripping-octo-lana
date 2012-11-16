@@ -73,8 +73,8 @@ ActiveRecord::Schema.define(:version => 20121115204342) do
   add_index "roles", ["name"], :name => "index_roles_on_name"
 
   create_table "sleeps", :force => true do |t|
-    t.datetime "start"
-    t.datetime "end"
+    t.datetime "starttime"
+    t.datetime "endtime"
     t.integer  "quality"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
