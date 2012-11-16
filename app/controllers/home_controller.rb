@@ -13,7 +13,7 @@ class HomeController < ApplicationController
     @sleeps = @sleeps + current_user.sleeps.where('starttime BETWEEN ? AND ?',  DateTime.now.beginning_of_day, DateTime.now.end_of_day).all
     @sleeps = @sleeps.uniq
     @healths = current_user.healths.where('time BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).all
-    @events = current_user.healths.where('time BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).all
+    @events = current_user.events.where('time BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).all
     @notes = current_user.notes.where('time BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).all
 
     respond_to do |format|
