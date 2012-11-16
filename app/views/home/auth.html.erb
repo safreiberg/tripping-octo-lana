@@ -1,6 +1,29 @@
 <h2>Dashboard for <%= current_user.name %></h2>
 <h3><%= @day.strftime('%A, %b %d') %></h3>
 <div class="span8">
+<table class="table table-condensed">
+  <caption><b>Feelings</b></caption>
+	  <thead>
+      <tr>
+          <th>Target Type</th>
+          <th>Value</th>
+          <th>Time</th>
+          <th>Location</th>
+     </tr>
+  </thead>   
+  <tbody>
+    <% @feelings.each do |feeling| %>
+    <tr>
+      <td><%= feeling.target_type %></td>
+      <td><%= feeling.value %></td>
+      <td><%= feeling.time.strftime('%I:%M %p, %a') %></td>
+      <td><%= feeling.location%>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<br />
+
 
 <table class="table table-condensed">
   <caption><b>Foods</b></caption>
